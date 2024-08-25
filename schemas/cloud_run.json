@@ -141,8 +141,7 @@
       "properties": {
         "timeout": {
           "description": "The maximum duration to wait before timing out. If left blank, the wait will be at most the time permitted by the underlying HTTP/RPC protocol. If RPC context deadline is also specified, the shorter one will be used.",
-          "type": "string",
-          "pattern": "^-?[0-9]+(.[0-9]+)?s$"
+          "type": "string"
         }
       }
     },
@@ -1896,8 +1895,7 @@
         },
         "etag": {
           "description": "`etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.",
-          "type": "string",
-          "pattern": "^[-A-Za-z0-9+/]*={0,3}$"
+          "type": "string"
         }
       }
     },
@@ -2006,8 +2004,7 @@
         },
         "updateMask": {
           "description": "OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only the fields in the mask will be modified. If no mask is provided, the following default mask is used: `paths: \"bindings, etag\"`",
-          "type": "string",
-          "pattern": "^[a-zA-Z0-9_]+(?:,[ ]?[a-zA-Z0-9_]+)*$"
+          "type": "string"
         }
       }
     },
@@ -2472,8 +2469,7 @@
         },
         "timeout": {
           "description": "Amount of time that this build should be allowed to run, to second granularity. If this amount of time elapses, work on the build will cease and the build status will be `TIMEOUT`. `timeout` starts ticking from `startTime`. Default time is 60 minutes.",
-          "type": "string",
-          "pattern": "^-?[0-9]+(.[0-9]+)?s$"
+          "type": "string"
         },
         "images": {
           "description": "A list of images to be pushed upon the successful completion of all build steps. The images are pushed using the builder service account's credentials. The digests of the pushed images will be stored in the `Build` resource's results field. If any of the images fail to be pushed, the build status is marked `FAILURE`.",
@@ -2484,8 +2480,7 @@
         },
         "queueTtl": {
           "description": "TTL in queue for this build. If provided and the build is enqueued longer than this value, the build will expire and the build status will be `EXPIRED`. The TTL starts ticking from create_time.",
-          "type": "string",
-          "pattern": "^-?[0-9]+(.[0-9]+)?s$"
+          "type": "string"
         },
         "artifacts": {
           "description": "Artifacts produced by the build that should be uploaded upon successful completion of all build steps.",
@@ -2821,8 +2816,7 @@
         },
         "timeout": {
           "description": "Time limit for executing this build step. If not defined, the step has no time limit and will be allowed to continue to run until either it completes or the build itself times out.",
-          "type": "string",
-          "pattern": "^-?[0-9]+(.[0-9]+)?s$"
+          "type": "string"
         },
         "status": {
           "description": "Output only. Status of the build step. At this time, build step status is only updated on build completion; step status is not updated in real-time as the build progresses.",
@@ -2957,8 +2951,7 @@
           "description": "List of build step outputs, produced by builder images, in the order corresponding to build step indices. [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can produce this output by writing to `$BUILDER_OUTPUT/output`. Only the first 50KB of data is stored. Note that the `$BUILDER_OUTPUT` variable is read-only and can't be substituted.",
           "type": "array",
           "items": {
-            "type": "string",
-            "pattern": "^[-A-Za-z0-9+/]*={0,3}$"
+            "type": "string"
           }
         },
         "artifactTiming": {
@@ -3067,8 +3060,7 @@
         },
         "value": {
           "description": "The hash value.",
-          "type": "string",
-          "pattern": "^[-A-Za-z0-9+/]*={0,3}$"
+          "type": "string"
         }
       }
     },
@@ -3494,8 +3486,7 @@
           "description": "Map of environment variable name to its encrypted value. Secret environment variables must be unique across all of a build's secrets, and must be used by at least one build step. Values can be at most 64 KB in size. There can be at most 100 secret values across all of a build's secrets.",
           "type": "object",
           "additionalProperties": {
-            "type": "string",
-            "pattern": "^[-A-Za-z0-9+/]*={0,3}$"
+            "type": "string"
           }
         }
       }
@@ -3642,8 +3633,7 @@
           "description": "Map of environment variable name to its encrypted value. Secret environment variables must be unique across all of a build's secrets, and must be used by at least one build step. Values can be at most 64 KB in size. There can be at most 100 secret values across all of a build's secrets.",
           "type": "object",
           "additionalProperties": {
-            "type": "string",
-            "pattern": "^[-A-Za-z0-9+/]*={0,3}$"
+            "type": "string"
           }
         }
       }

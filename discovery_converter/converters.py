@@ -61,7 +61,8 @@ def map_format_node(node: dict[str, Any]) -> dict[str, Any]:
         # as "web-safe" or "base64url"). Defined by RFC4648.
         "byte": {
             "type": "string",
-            "pattern": "^[-A-Za-z0-9+/]*={0,3}$",
+            # Disabled for now to avoid to overconstraint the Schema
+            # "pattern": "^[-A-Za-z0-9+/]*={0,3}$",  # noqa: ERA001
         },
         # An RFC3339 date in the format YYYY-MM-DD. Defined in the JSON Schema spec.
         "date": {
@@ -87,26 +88,30 @@ def map_format_node(node: dict[str, Any]) -> dict[str, Any]:
         # as the decimal point, not a comma.
         "google-duration": {
             "type": "string",
-            "pattern": "^-?[0-9]+(.[0-9]+)?s$",
+            # Disabled for now to avoid to overconstraint the Schema
+            # "pattern": "^-?[0-9]+(.[0-9]+)?s$",  # noqa: ERA001
         },
         # A string where field names are separated by a comma. Field
         # names are represented in lower-camel naming conventions.
         "google-fieldmask": {
             "type": "string",
-            "pattern": "^[a-zA-Z0-9_]+(?:,[ ]?[a-zA-Z0-9_]+)*$",
+            # Disabled for now to avoid to overconstraint the Schema
+            # "pattern": "^[a-zA-Z0-9_]+(?:,[ ]?[a-zA-Z0-9_]+)*$",  # noqa: ERA001
         },
         # A 64-bit signed integer. It has a minimum value of
         # -9,223,372,036,854,775,808 and a maximum value
         # of 9,223,372,036,854,775,807 (inclusive).
         "int64": {
             "type": "string",
-            "pattern": "^-?[0-9]+$",
+            # Disabled for now to avoid to overconstraint the Schema
+            # "pattern": "^-?[0-9]+$",  # noqa: ERA001
         },
         # A 64-bit unsigned integer. It has a minimum value
         # of 0 and a maximum value of (2^64)-1 (inclusive).
         "uint64": {
             "type": "string",
-            "pattern": "^[0-9]+$",
+            # Disabled for now to avoid to overconstraint the Schema
+            # "pattern": "^[0-9]+$",  # noqa: ERA001
         },
     }
 
