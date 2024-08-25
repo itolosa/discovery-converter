@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "asdasd",
+  "description": "asdsd",
+  "type": "object",
+  "properties": {
+    "the_response": {
+      "type": "object",
+      "properties": {
+        "prop1": {
+          "type": "unknown",
+          "items": {
+            "type": "object",
+            "properties": {
+              "subprop1": {
+                "type": "any"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["response"]
+}
